@@ -9,7 +9,6 @@ const Hero = () => {
   const { width, height } = useWindowSize();
   const [showConfetti, setShowConfetti] = useState(false);
   const [showScratchCard, setShowScratchCard] = useState(false);
-  const audioRef = useRef(null);
 
   const handleSurprise = () => {
     setShowScratchCard(true);
@@ -17,9 +16,6 @@ const Hero = () => {
 
   const handleReveal = () => {
     setShowConfetti(true);
-    if (audioRef.current) {
-      audioRef.current.play();
-    }
   };
 
   return (
@@ -52,7 +48,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <audio ref={audioRef} src={`${import.meta.env.BASE_URL}sister_song.mp3`} loop />
     </section>
   );
 };

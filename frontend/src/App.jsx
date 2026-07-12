@@ -18,6 +18,15 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <iframe
+          width="0"
+          height="0"
+          src="https://www.youtube.com/embed/VHKJQBRPfpE?autoplay=1&loop=1&playlist=VHKJQBRPfpE"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          style={{ display: 'none' }}
+        ></iframe>
         <Timeline />
         <Reasons />
         <Gallery />

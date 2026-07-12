@@ -181,12 +181,12 @@ const PasswordScreen = ({ onUnlock }) => {
 
           <div className="numpad">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
-              <button key={num} onClick={() => handleNumber(num.toString())} className="num-btn">
+              <button key={num} onClick={() => handleNumberClick(num.toString())} className="num-btn">
                 {num}
               </button>
             ))}
             <button className="num-btn empty" disabled></button>
-            <button onClick={() => handleNumber('0')} className="num-btn">0</button>
+            <button onClick={() => handleNumberClick('0')} className="num-btn">0</button>
             <button onClick={handleDelete} className="num-btn delete-btn">
               <Delete size={24} />
             </button>
