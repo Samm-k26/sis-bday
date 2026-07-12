@@ -12,7 +12,7 @@ const PasswordScreen = ({ onUnlock }) => {
   // Auto-submit when 4 digits are entered
   useEffect(() => {
     if (password.length === 4) {
-      if (password === '1807') {
+      if (password === '1407') {
         onUnlock();
       } else {
         setError(true);
