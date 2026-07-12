@@ -150,19 +150,21 @@ const PasswordScreen = ({ onUnlock }) => {
       <div className="password-card glass-panel" style={{ position: 'relative', overflow: 'hidden' }}>
         
         {/* Scratch Overlay */}
-        <canvas
-          ref={canvasRef}
-          width={350}
-          height={520}
-          className={`password-scratch-canvas ${isScratched ? 'revealed' : ''}`}
-          onMouseDown={handleStart}
-          onMouseUp={handleEnd}
-          onMouseMove={handleMove}
-          onMouseLeave={handleEnd}
-          onTouchStart={handleStart}
-          onTouchEnd={handleEnd}
-          onTouchMove={handleMove}
-        />
+        {!isScratched && (
+          <canvas
+            ref={canvasRef}
+            width={350}
+            height={520}
+            className="password-scratch-canvas"
+            onMouseDown={handleStart}
+            onMouseUp={handleEnd}
+            onMouseMove={handleMove}
+            onMouseLeave={handleEnd}
+            onTouchStart={handleStart}
+            onTouchEnd={handleEnd}
+            onTouchMove={handleMove}
+          />
+        )}
 
         <div className="password-content" style={{ opacity: 1, transition: 'opacity 0.5s' }}>
           <div className="icon-container">
