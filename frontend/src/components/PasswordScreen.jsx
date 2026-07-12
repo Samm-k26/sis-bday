@@ -110,7 +110,7 @@ const PasswordScreen = ({ onUnlock }) => {
     }
     
     const transparentPercentage = transparentPixels / (pixels.length / 16);
-    if (transparentPercentage > 0.35) { // 35% scratched reveals it
+    if (transparentPercentage > 0.05) { // 5% scratched reveals it
       setIsScratched(true);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
@@ -164,7 +164,7 @@ const PasswordScreen = ({ onUnlock }) => {
           onTouchMove={handleMove}
         />
 
-        <div className="password-content" style={{ opacity: isScratched ? 1 : 0.2, transition: 'opacity 0.5s' }}>
+        <div className="password-content" style={{ opacity: 1, transition: 'opacity 0.5s' }}>
           <div className="icon-container">
             <Lock size={40} className="lock-icon" />
           </div>
