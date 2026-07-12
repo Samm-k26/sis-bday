@@ -13,7 +13,6 @@ const Navbar = () => {
           <a href="#timeline" className="nav-link">Journey</a>
           <a href="#reasons" className="nav-link">Why You</a>
           <a href="#gallery" className="nav-link">Gallery</a>
-          <a href="#messages" className="nav-link btn-sm">Wishes</a>
         </div>
       </div>
     </nav>
