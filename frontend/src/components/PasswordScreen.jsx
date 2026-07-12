@@ -6,6 +6,8 @@ const PasswordScreen = ({ onUnlock }) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
   const [isScratched, setIsScratched] = useState(false);
+  const audioRef = useRef(null);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const [isDrawing, setIsDrawing] = useState(false);
   const canvasRef = useRef(null);
 
@@ -114,9 +116,16 @@ const PasswordScreen = ({ onUnlock }) => {
     }
   };
 
-  const handleNumber = (num) => {
-    if (password.length < 4 && !error) {
+  const handleNumberClick = (num) => {
+    if (password.length < 4) {
       setPassword(prev => prev + num);
+      setError(false);
+    }
+    
+    // Play audio on first interaction
+    if (!hasInteracted && audioRef.current) {
+      audioRef.current.play().catch(e => console.log('Audio play failed:', e));
+      setHasInteracted(true);
     }
   };
 
@@ -184,6 +193,7 @@ const PasswordScreen = ({ onUnlock }) => {
           </div>
         </div>
       </div>
+      <audio ref={audioRef} src={`${import.meta.env.BASE_URL}lock_song.mp3`} loop />
     </div>
   );
 };
