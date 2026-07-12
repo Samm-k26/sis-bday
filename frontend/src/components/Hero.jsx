@@ -52,7 +52,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <audio ref={audioRef} src="/sister_song.mp3" loop />
+      <audio ref={audioRef} src={`${import.meta.env.BASE_URL}sister_song.mp3`} loop />
     </section>
   );
 };
